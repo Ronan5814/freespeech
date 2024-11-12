@@ -18,7 +18,6 @@
 # For more samples to get started with GitHub Action workflows to deploy to Azure: https://github.com/Azure/actions-workflow-samples
 
 # This workflow will build and push a Node.js application to an Azure Web App when a commit is pushed to your default branch.
-
 on:
   push:
     branches: [ "master" ]   # Adjust to the default or main branch you use
@@ -76,5 +75,6 @@ jobs:
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: ./build  # Ensure this matches the output folder from the build step
+        package: ./dist  # Ensure this matches the output folder from the build step
+
 
